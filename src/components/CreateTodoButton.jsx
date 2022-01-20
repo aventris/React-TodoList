@@ -2,9 +2,12 @@ import React from 'react';
 
 import '@styles/CreateTodoButton.scss';
 
-const CreateTodoButton = () => {
+const CreateTodoButton = ({ setOpenForm }) => {
+  const handleClick = () => {
+    setOpenForm(prevState => !prevState);
+  }
   return (
-    <button className='create-todo'>
+    <button onClick={handleClick} className='create-todo'>
       +
     </button>
   );

@@ -4,17 +4,41 @@ import Modal from '@containers/Modal';
 
 import '@styles/NewTodo.scss';
 
-const NewTodo = () => {
+const NewTodo = ({ setOpenForm, addTodo }) => {
+  const [formInput, setFormInput] = React.useState("");
+
+  const handleFormInput = (event) => {
+    setFormInput(event.target.value);
+  }
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    addTodo(formInput);
+    setOpenForm(false);
+
+  }
+
+  const onCancel = () => {
+    setOpenForm(false);
+  }
   return (
     <Modal>
-      <div className='add-todo'>
-        <span>Add new Todo</span>
-        <textarea name="" id="" cols="30" rows="3"></textarea>
+      <form onSubmit={handleSubmit} className='add-todo'>
+        <span>Add new ToDo</span>
+        <textarea
+          value={formInput}
+          onChange={handleFormInput}
+          name=""
+          id=""
+          cols="30"
+          rows="3"
+          required
+        />
         <div className='add-todo__button-container'>
-          <button className='add-todo__add'>Add</button>
-          <button className='add-todo__cancel'>Cancel</button>
+          <button type='submit' className='add-todo__add'>Add</button>
+          <button type='button' className='add-todo__cancel' onClick={onCancel}>Cancel</button>
         </div>
-      </div>
+      </form>
     </Modal>
   );
 }

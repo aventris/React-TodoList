@@ -3,13 +3,24 @@
   max-width: 300px;
   flex-direction: column;
   align-items: center;
-  background-color: #bc8f8f;
+  border-radius: 5px;
+  color:white;
+  background-color: #80ced7;
   padding: 0 10px;
   span{
     margin: 5px 0;
   }
   textarea{
     width: 100%;
+    outline: none;
+    &:hover{
+      border: 1px solid grey;
+      box-shadow: 0 0 5px grey;
+    }
+    &:focus{
+      border: 1px solid #007EA7;
+      box-shadow: 0 0 5px #007EA7;
+    }
   }
   &__button-container{
     width: 100%;
@@ -18,11 +29,25 @@
     justify-content: space-between;
   }
   &__add{
-    background-color: #92e2fd;
+    cursor: pointer;
+    width: 100%;
+    max-width: 150px;
+    border-radius: 5px;
+    color:white;
+    background-color: #007EA7;
     border:none;
+    &:hover{
+      box-shadow: 0 0 5px #007EA7;
+    }
   }
   &__cancel{
+    cursor: pointer;
+    border-radius: 5px;
     border:none;
-    background-color: rgb(214, 214, 214);
+    color:white;
+    background-color: red;
+    &:hover{
+      box-shadow: 0 0 5px red;
+    }
   }
 }

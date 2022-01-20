@@ -28,9 +28,10 @@
 
   &__filter-container{
     display: flex;
+    height: 30px;
+    border-radius:5px;
     align-items: center;
     justify-content: space-between;
-    border-radius:5px;
     background-color: white;
     img{
       width: 20px;
